@@ -1,3 +1,7 @@
 *.o
 *.iso
 *.txt
+
+iso/
+*.elf
+*.os
