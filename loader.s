@@ -1,19 +1,19 @@
-global loader				;the entry symbol for ELF
+global loader ; the entry symbol for ELF
 global outb
 
-MAGIC_NUMBER equ 0x1BADB002		;
-FLAGS equ 0x0			;
-CHECKSUM equ -MAGIC_NUMBER	;
+MAGIC_NUMBER equ 0x1BADB002
+FLAGS equ 0x0
+CHECKSUM equ -MAGIC_NUMBER
 KERNEL_STACK_SIZE equ 4096
 
 extern sum_of_three
 extern kmain
-section .text:				;
+section .text:
 
-align 4					;
+align 4
 dd MAGIC_NUMBER
-dd FLAGS			;
-dd CHECKSUM			;
+dd FLAGS
+dd CHECKSUM
 
 outb:
     mov al, [esp+8]
@@ -21,14 +21,14 @@ outb:
     out dx, al
     ret
 
-loader:	
- ;mov [0x000B8000], dword 0x2841
- ;mov eax, 0xcafebabe		;
+loader:
+ ; mov [0x000B8000], dword 0x2841
+ ; mov eax, 0xcafebabe		;
  mov esp, kernel_stack + KERNEL_STACK_SIZE
  call kmain
 
 .loop:
- jmp .loop			;
+ jmp .loop
 
 section .bss
 align 4

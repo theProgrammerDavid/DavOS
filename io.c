@@ -17,7 +17,6 @@ void serial_configure_line(unsigned short com)
     outb(SERIAL_LINE_COMMAND_PORT(com), 0x03);
 }
 
-
 void serial_configure_baud_rate(unsigned short com, unsigned short divisor)
 {
     outb(SERIAL_LINE_COMMAND_PORT(com), SERIAL_LINE_ENABLE_DLAB);
