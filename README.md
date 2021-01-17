@@ -10,3 +10,4 @@ sudo apt-get install build-essential nasm genisoimage bochs bochs-sdl
 ## Usage
 
 * ``make run``
+* Enter `c` in the command prompt 
