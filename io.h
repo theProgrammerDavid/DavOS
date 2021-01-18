@@ -1,22 +1,4 @@
-#ifndef INCLUDE_IO_H
-#define INCLUDE_IO_H
-
-// const int black         = 0x0;
-// const int blue          = 0x1;
-// const int green         = 0x2;
-// const int cyan          = 0x3;
-// const int red           = 0x4;
-// const int magenta       = 0x5;
-// const int brown         = 0x6;
-// const int light_grey    = 0x7;
-// const int dark_grey     = 0x8;
-// const int light_blue    = 0x9;
-// const int light_green   = 0x10;
-// const int light_cyan    = 0x11;
-// const int light_red     = 0x12;
-// const int light_magenta = 0x13;
-// const int light_brown   = 0x14;
-// const int white         = 0x15;
+#pragma once
 
 /**
  * All the IO ports are calculated relative to the data port. This is
@@ -84,7 +66,19 @@ void fb_write_cell(unsigned int, char, unsigned char, unsigned char);
  * @param s String to write
  * @param n Length of the string that is passed
  */
-void write(char s[], unsigned int n);
+void write(const char* s, unsigned int n);
+
+void clear_fb();
+
+/** inb:
+     *  Read a byte from an I/O port.
+     *
+     *  @param  port The address of the I/O port
+     *  @return      The read byte
+     */
+unsigned char inb(unsigned short port);
+
+void write_new_line(const char *s, unsigned int n);
 
 /**
  * outb: 
@@ -97,5 +91,3 @@ void outb(unsigned short port, unsigned char data);
 
 #define FB_GREEN 2
 #define FB_DARK_GREY 8
-
-#endif
