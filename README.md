@@ -6,6 +6,10 @@ An Operating System that's a work in progress following the tutorial here: http:
     ```bash
     git clone https://github.com/theProgrammerDavid/DavOS.git
     ```
+- Install Bochs to run the iso
+  ```bash
+    sudo apt install bochs bochs-sdl
+  ```
 ## Usage
 
 
