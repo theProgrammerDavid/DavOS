@@ -91,3 +91,4 @@ void outb(unsigned short port, unsigned char data);
 
 #define FB_GREEN 2
 #define FB_DARK_GREY 8
+int serial_is_transmit_fifo_empty(unsigned int com);

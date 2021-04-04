@@ -100,8 +100,8 @@ void fb_write_cell(unsigned int i, char c, unsigned char fg, unsigned char bg)
      *  @return 0 if the transmit FIFO queue is not empty
      *          1 if the transmit FIFO queue is empty
      */
-int serial_is_transmit_fifo_empty(unsigned int com)
-{
-    /* 0x20 = 0010 0000 */
-    return inb(SERIAL_LINE_STATUS_PORT(com)) & 0x20;
-}
+// int serial_is_transmit_fifo_empty(unsigned int com)
+// {
+//     /* 0x20 = 0010 0000 */
+//     return inb(SERIAL_LINE_STATUS_PORT(com)) & 0x20;
+// }

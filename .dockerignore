@@ -1,0 +1,6 @@
+bochslog.txt
+Dockerfile
+.gitignore
+.git
+*.o
+*.iso

@@ -6,7 +6,7 @@ CFLAGS = -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector \
 LDFLAGS = -T link.ld -melf_i386
 AS = nasm
 ASFLAGS = -f elf
-
+current_dir = $(shell pwd)
 all: kernel.elf
 
 kernel.elf: $(OBJECTS)
@@ -18,7 +18,12 @@ os.iso: kernel.elf
 	-boot-load-size 4 -A os -input-charset utf8 -quiet -boot-info-table -o os.iso iso
 
 run: os.iso
-	bochs -f bochsrc.txt -q
+	echo 'c' | bochs -f bochsrc.txt -q
+
+docker: 
+	docker build -t davos .
+	docker run --rm -it -v $(current_dir):/root/env davos 
+	
 
 %.o: %.c
 	$(CC) $(CFLAGS) $< -o $@
