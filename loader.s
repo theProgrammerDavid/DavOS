@@ -26,6 +26,11 @@ loader:
  ; mov eax, 0xcafebabe		;
  mov esp, kernel_stack + KERNEL_STACK_SIZE
  call kmain
+;  push dword 1 
+;  push dword 2
+;  push dword 3
+;  call sum_of_three
+;  mov ecx, eax
 
 .loop:
  jmp .loop

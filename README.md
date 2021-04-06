@@ -23,3 +23,5 @@ An Operating System that's a work in progress following the tutorial here: http:
     make docker && make run
   ```
 
+## Docs
+* [bochs config file](https://bochs.sourceforge.io/doc/docbook/user/bochsrc.html)

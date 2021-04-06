@@ -44,7 +44,7 @@ void write(const char *s, unsigned int n)
     unsigned int i = 0;
     for (i = 0; i < n; i++)
     {
-        fb_write_cell(i * 2, s[i], FB_GREEN, FB_DARK_GREY);
+        fb_write_cell(i * 2, s[i], FB_DARK_GREY, FB_GREEN);
         fb_move_cursor(i);
         //fb += 0x15;
     }
@@ -63,7 +63,7 @@ void clear_fb()
 
 void write_new_line(const char *s, unsigned int n)
 {
-    fb_move_cursor(0x0050);
+    // fb_move_cursor(0x0050);
     unsigned int i = 0;
     for (i = 0; i < n; i++)
     {
